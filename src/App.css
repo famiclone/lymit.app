@@ -1,38 +1,120 @@
-.App {
-  text-align: center;
+:root {
+  --bg-color: black;
+  --fg-color: white;
+  --mid-color: #1c1c1e;
+  --light-gray: #9898a0;
+  --orange: #ff5613;
+  --blue: #63e6e1;
+  --primary: #0883fe;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+    font-family: 'SFProRegular';
+    src: url('assets/fonts/sf_pro_regular.otf') format('opentype'); 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@font-face {
+    font-family: 'SFProSemiBold';
+    src: url('assets/fonts/sf_pro_semibold.otf') format('opentype');
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@font-face {
+    font-family: 'SFProBold';
+    src: url('assets/fonts/sf_pro_bold.otf') format('opentype');
+}
+
+.app {
+  font-family: 'SFProSemiBold', sans-serif;
+  background-image: conic-gradient(from 0deg at 0% 25%, #2f7079, #256e3d, #3c3a25 180deg);
+  background-attachment: fixed;
+  height: 100vh;
+  color: var(--fg-color);
+  overflow: hidden;
+}
+
+.app__content {
+  background-image: linear-gradient(to top, var(--bg-color) 70%, transparent);
+  padding: 0 1.5rem;
+  height: 100%;
+  overflow: auto;
+}
+
+.app__header {
+  padding-top: 23%;
+}
+
+.d-flex {
   display: flex;
-  flex-direction: column;
+  align-items: end;
+  gap: 0.5rem;
+}
+
+.card {
+  background-color: var(--mid-color); 
+  border-radius: 1rem;
+  padding: 0.9rem;
+  height: 100px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  margin-bottom:0.5rem;
+}
+
+.card__title {
+  font-size: 12px;
+}
+
+.daylimit {
+  font-size: 2rem;
+}
+
+.primary {
+  color: var(--orange);
+}
+
+.secondary {
+  color: var(--blue);
+}
+
+.text--big {
+  vertical-align: middle;
+}
+
+.text--secondary {
+  color: var(--light-gray);
+  font-size: 12px;
+  vertical-align: middle;
+}
+
+.app__footer {
+  height: 90px;
+  width: 100%;
+  position:fixed;
+  bottom: 0;
+  left: 0;
+  backdrop-filter: blur(50px);
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.footer__icon {
+  width: 32px;
+  color: red;
+}
+
+.footer__button {
+  width: 64px;
+  height: 64px;
+  font-size: 12px;
+  display: flex;
+  flex-flow: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: var(--light-gray);
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer__button.active {
+  color: var(--primary);
 }
