@@ -3,8 +3,7 @@ import Header from "../header";
 const Settings = () => {
   return (
     <div>
-      <Header/>
-      <h1>Settings</h1>
+      <Header title={'Settings'}/>
     </div>
   );
 }

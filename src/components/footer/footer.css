@@ -1,0 +1,33 @@
+.app__footer {
+  height: 90px;
+  width: 100%;
+  position:fixed;
+  bottom: 0;
+  left: 0;
+  backdrop-filter: blur(50px);
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  border-top: 1px solid var(--light-gray);
+}
+
+.footer__icon {
+  width: 32px;
+  color: red;
+}
+
+.footer__button {
+  width: 64px;
+  height: 64px;
+  font-size: 12px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--light-gray);
+}
+
+.footer__button.active {
+  color: var(--primary);
+}

@@ -1,4 +1,4 @@
-import { clientInfoMock } from "../mocks";
+//import { clientInfoMock } from "../mocks";
 import { MonoClientInfo } from "../types";
 
 class MonoClient {
@@ -13,7 +13,28 @@ class MonoClient {
       const response = await new Promise<Response>((resolve, reject) => {
         setTimeout(() => {
           const mockResponse = {
-            json: () => Promise.resolve(clientInfoMock)
+            json: () => Promise.resolve({
+              name: "John Doe",
+              accounts: [
+                {
+                  id: "123456789",
+                  balance: 100,
+                  creditLimit: 1000,
+                  currencyCode: 980,
+                  cashbackType: "UAH",
+                  type: "black",
+                  iban: "UA123456789",
+                },
+                {
+                  id: "987654321",
+                  balance: 100,
+                  currencyCode: 980,
+                  cashbackType: "UAH",
+                  type: "white",
+                  iban: "UA987654321",
+                },
+              ],
+            })
           };
 
           resolve(mockResponse as Response);
