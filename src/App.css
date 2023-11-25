@@ -6,6 +6,15 @@
   --orange: #ff5613;
   --blue: #63e6e1;
   --primary: #0883fe;
+  --border-radius-m: 2rem;
+}
+
+html {
+  box-sizing: border-box;
+  user-select: none;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 @font-face {
@@ -23,20 +32,35 @@
     src: url('assets/fonts/sf_pro_bold.otf') format('opentype');
 }
 
+.link--custom {
+  color: inherit;
+  text-decoration: none;
+}
+
 .app {
   font-family: 'SFProSemiBold', sans-serif;
-  background-image: conic-gradient(from 0deg at 0% 25%, #2f7079, #256e3d, #3c3a25 180deg);
+  background-image: conic-gradient(from 0deg at 0% 25%, #2f7079, #6e253e, #3c3a25 180deg);
   background-attachment: fixed;
   height: 100vh;
   color: var(--fg-color);
   overflow: hidden;
 }
 
+.app[data-theme="light"] {
+  background-image: none;
+  background-color: var(--fg-color);
+  color: var(--bg-color);
+}
+
 .app__content {
-  background-image: linear-gradient(to top, var(--bg-color) 70%, transparent);
   padding: 0 1.5rem;
+  background-image: linear-gradient(to top, var(--bg-color) 70%, transparent);
   height: 100%;
   overflow: auto;
+}
+
+.app[data-theme="light"] .app__content {
+  background-image: none;
 }
 
 .app__header {
@@ -117,4 +141,37 @@
 
 .footer__button.active {
   color: var(--primary);
+}
+
+.login {
+  height: 100vh;
+}
+
+form {
+  width: 100%;
+}
+
+.login__content {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.form-group {
+
+}
+
+.form-group--input input {
+  border-radius: var(--border-radius-m);
+  height: 48px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: 1px solid var(--fg-color);
+  color: var(--fg-color);
+  background: none;
+  width: 100%;
+}
+
+.form-group--input input::placeholder {
+  color: var(--fg-color);
 }
